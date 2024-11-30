@@ -26,6 +26,11 @@ public class TelaLogin extends JFrame{
         this.emailInput.setBounds(240, 10, 200, 30);
         this.emailInput.setVisible(true);
         
+        
+        
+        this.senhaInput = new JPasswordField();
+        
+        
         this.add(emailInput);
         this.add(emailLabel);
         this.setLayout(null);
