@@ -1,5 +1,6 @@
 package aula04;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
@@ -10,6 +11,7 @@ public class TelaLogin extends JFrame{
     private JLabel emailLabel;
     private JLabel senhaLabel;
     private JPasswordField senhaInput;
+    private JButton botaoEntrar;
     
     public TelaLogin(){
         this.setSize(600,400);
@@ -23,13 +25,27 @@ public class TelaLogin extends JFrame{
         this.emailLabel.setVisible(true);
         
         this.emailInput = new JTextField();
-        this.emailInput.setBounds(240, 10, 200, 30);
+        this.emailInput.setBounds(80, 10, 200, 30);
         this.emailInput.setVisible(true);
         
-        
+        this.senhaLabel = new JLabel();
+        this.senhaLabel.setText("Senha:");
+        this.senhaLabel.setBounds(10, 50, 200, 30);
+        this.senhaLabel.setVisible(true);
+        this.add(senhaLabel);
         
         this.senhaInput = new JPasswordField();
+        this.senhaInput.setBounds(80, 50, 200, 30);
+        this.senhaInput.setVisible(true);
+        this.add(senhaInput);
         
+        this.botaoEntrar = new JButton();
+        this.botaoEntrar.setText("Entrar");
+        this.botaoEntrar.setBounds(80, 120, 80, 30);
+        this.botaoEntrar.setVisible(true);
+        this.add(botaoEntrar);
+        this.botaoEntrar.
+                addActionListener(new OuvinteBotaoEntrar(this));
         
         this.add(emailInput);
         this.add(emailLabel);
@@ -41,4 +57,12 @@ public class TelaLogin extends JFrame{
         TelaLogin tl = new TelaLogin();
 
     }
+
+    public JTextField getEmailInput() {
+        return emailInput;
+    }
+    public JPasswordField getSenhaInput() {
+        return senhaInput;
+    }
+    
 }
